@@ -12,5 +12,11 @@ In order to perform validations, you need to input the ID number accordingly to 
 
 The provided functions check the correctness of the number and the format. They are:
 
-`checkCC(ccVal)`, which checks if a `Cartão do Cidadão` provided in the format DDDDDDDD C AAT is valid;
+`checkCC(ccVal)`, which checks if a `Cartão do Cidadão` provided in the format DDDDDDDD C AAT is valid,
 `checkBI(biVal)`, which checks if a `Bilhete de Identidade` provided in the format DDDDDDDD C is valid.
+
+Both functions return:
+
+* `-1` if the provided string is not in the correct format
+* `0` if the provided string is not a valid `Cartão do Cidadão`/`Bilhete de Identidade`
+* `1` if the provided string is a valid `Cartão do Cidadão`/`Bilhete de Identidade`
