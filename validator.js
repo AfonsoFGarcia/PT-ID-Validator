@@ -95,7 +95,6 @@ function performCCValidation(ccVal) {
 function checkCC(ccVal) {
     var regExp = /^[0-9]{7,8}\ [0-9]\ [A-Z]{2}[0-9]$/;
     if(regExp.test(ccVal)) {
-        var biVal = ccVal.slice(0, -4);
         return performCCValidation(biVal.replace(" ", ""));
     }
     return -1;
