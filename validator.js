@@ -43,7 +43,7 @@ function performBIValidation(biVal) {
 function checkBI(biVal) {
     var regExp = /^[0-9]{7,8}\ [0-9]$/;
     if(regExp.test(biVal)) {
-        return performBIValidation(biVal.replace(" ", ""));
+        return performBIValidation(replaceAll(" ", "", biVal));
     }
     return -1;
 }
@@ -117,7 +117,7 @@ function performCCValidation(ccVal) {
 function checkCC(ccVal) {
     var regExp = /^[0-9]{7,8}\ [0-9]\ [A-Z]{2}[0-9]$/;
     if(regExp.test(ccVal)) {
-        return performCCValidation(ccVal.replace(" ", ""));
+        return performCCValidation(replaceAll(" ", "", ccVal));
     }
     return -1;
 }
