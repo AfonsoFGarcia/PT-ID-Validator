@@ -1,4 +1,16 @@
 Portuguese-ID-Validator
 =======================
 
-Javascript library to validate the ID numbers currently available in Portugal
+This library provides functions to validate the portuguese `Bilhete de Identidade` and `Cartão de Cidadão` number.
+
+Usage
+-----
+
+You can either check-out the current development version and include it in your projects or use a release. The current release is 1.0.1 and can be accessed at https://cdn.rawgit.com/AfonsoFGarcia/Portuguese-ID-Validator/v1.0.1/validator.js
+
+In order to perform validations, you need to input the ID number accordingly to the description in http://www.cartaodecidadao.pt/index.php%3Foption=com_content&task=view&id=156&Itemid=35&lang=pt.html. Although this description is for the `Cartão de Cidadão`, the same applies for `Bilhete de Identidade`, only without the AAT end.
+
+The provided functions check the correctness of the number and the format. They are:
+
+`checkCC(ccVal)`, which checks if a `Cartão do Cidadão` provided in the format DDDDDDDD C AAT is valid;
+`checkBI(biVal)`, which checks if a `Bilhete de Identidade` provided in the format DDDDDDDD C is valid.
