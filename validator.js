@@ -90,7 +90,7 @@ function performCCValidation(ccVal) {
 }
 
 function checkCC(ccVal) {
-    var regExp = /^[0-9]{7,8}\ [0-9]\ [A-Z]{2}[0-9]$/;
+    var regExp = /^[0-9]{7,8}\ [0-9]\ ([A-Z]|[0-9]){2}[0-9]$/;
     if(regExp.test(ccVal)) {
         return performCCValidation(replaceAll(" ", "", ccVal));
     }
