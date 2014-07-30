@@ -6,7 +6,7 @@
 function escapeRegExp(string) {
     return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
-    
+
 function replaceAll(find, replace, str) {
     return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
 }
@@ -31,7 +31,7 @@ function validBI(biVal, is10) {
         if(j == biVal.length-1 && is10 == 1) {
             sum += 10*i;
             i++;
-            continue; 
+            continue;
         }
         sum += parseInt(biVal.charAt(j))*i;
         i++;
@@ -47,14 +47,6 @@ function performBIValidation(biVal) {
         return 0;
     }
     return 1;
-}
-
-function checkBI(biVal) {
-    var regExp = /^[0-9]{7,8}\ [0-9]$/;
-    if(regExp.test(biVal)) {
-        return performBIValidation(replaceAll(" ", "", biVal));
-    }
-    return -1;
 }
 
 /*******************************************
@@ -89,10 +81,38 @@ function performCCValidation(ccVal) {
     return (sum % 10 == 0 ? 1 : 0);
 }
 
-function checkCC(ccVal) {
-    var regExp = /^[0-9]{7,8}\ [0-9]\ ([A-Z]|[0-9]){2}[0-9]$/;
-    if(regExp.test(ccVal)) {
-        return performCCValidation(replaceAll(" ", "", ccVal));
-    }
-    return -1;
-}
+/*******************************************
+ *              CHECK FUNCTION             *
+ *******************************************/
+
+ function check(val) {
+     var ccRegExp = /^[0-9]{7,8}\ [0-9]\ ([A-Z]|[0-9]){2}[0-9]$/;
+     var biRegExp = /^[0-9]{7,8}\ [0-9]$/;
+     if(ccRegExp.test(val)) {
+         return performCCValidation(replaceAll(" ", "", val));
+     } else if(biRegExp.test(val)) {
+         return performBIValidation(replaceAll(" ", "", val));
+     } else {
+         return -1;
+     }
+ }
+
+/*******************************************
+ *             LEGACY FUNCTIONS            *
+ *******************************************/
+
+ function checkCC(ccVal) {
+     var regExp = /^[0-9]{7,8}\ [0-9]\ ([A-Z]|[0-9]){2}[0-9]$/;
+     if(regExp.test(ccVal)) {
+         return performCCValidation(replaceAll(" ", "", ccVal));
+     }
+     return -1;
+ }
+
+ function checkBI(biVal) {
+     var regExp = /^[0-9]{7,8}\ [0-9]$/;
+     if(regExp.test(biVal)) {
+         return performBIValidation(replaceAll(" ", "", biVal));
+     }
+     return -1;
+ }
