@@ -1,14 +1,14 @@
-Portuguese-ID-Validator
+PT-ID-Validator
 =======================
 
-![npm](https://img.shields.io/npm/dt/portuguese-id-validator)
+![npm](https://img.shields.io/npm/dt/pt-id-validator)
 
 This library provides functions to validate the portuguese `Bilhete de Identidade` and `Cartão de Cidadão` number.
 
 Usage
 -----
 
-The module is available in [npm](https://www.npmjs.com/package/portuguese-id-validator).
+The module is available in [npm](https://www.npmjs.com/package/pt-id-validator).
 
 In order to perform validations, you need to input the ID number accordingly to the description in the [documentation](https://www.autenticacao.gov.pt/documents/20126/115760/Valida%C3%A7%C3%A3o+de+N%C3%BAmero+de+Documento+do+Cart%C3%A3o+de+Cidad%C3%A3o.pdf/) provided by the portuguese government (Portuguese only). Although this description is for `Cartão de Cidadão`, the same applies for `Bilhete de Identidade`, only without the AAT end.
 
