@@ -1,6 +1,6 @@
 {
   "name": "pt-id-validator",
-  "version": "2.0.1",
+  "version": "2.1.0-SNAPSHOT",
   "description": "Library to perform validation of Portuguese ID documents",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "jest",
+    "test": "jest  --coverage",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",

@@ -13,6 +13,9 @@ describe('BI', () => {
   it('INVALID 7 DIGITS', () => {
     expect(check('1234567 0')).toBe(false);
   });
+  it('INVALID CHECK DIGIT NOT ZERO', () => {
+    expect(check('12345678 1')).toBe(false);
+  });
 });
 
 describe('CC', () => {
